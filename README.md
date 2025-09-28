@@ -1,5 +1,3 @@
-# l_youtube_chatbot/l_youtube_chatbot/README.md
-
 # YouTube Chatbot
 
 This project is a YouTube chatbot that fetches video transcripts and allows users to ask questions based on the content of those transcripts. It utilizes various libraries to process the text, generate embeddings, and provide relevant answers.
