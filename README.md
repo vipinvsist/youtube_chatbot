@@ -24,7 +24,7 @@ l_youtube_chatbot
 
 1. Clone the repository:
    ```
-   git clone https://github.com/vipinvsist/l_youtube_chatbot.git
+   git clone [https://github.com/vipinvsist/l_youtube_chatbot.git](https://github.com/vipinvsist/youtube_chatbot.git)
    ```
 
 2. Install the required dependencies:
