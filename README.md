@@ -48,7 +48,3 @@ This project requires the following Python packages:
 - `youtube-transcript-api`
 - `langchain`
 - `python-dotenv`
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
