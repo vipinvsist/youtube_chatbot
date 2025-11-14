@@ -13,13 +13,17 @@ def split_text(text, chunk_size=1000, chunk_overlap=200):
     Returns:
         List[str]: A list of text chunks.
     """
+    print(f"================================== Loading the chunks=================================")
+    print(f"Chunk size: {chunk_size}, Chunk overlap: {chunk_overlap}")
     text_splitter=RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap
     )
     # chunks = text_splitter.split_text(text)
     chunks=text_splitter.create_documents([text])
+    print(f"Number of chunks: {len(chunks)}")
+    print(f"================================== Text Splitting Complete =================================\n")
     return chunks                    # f"Number of chunks: {len(chunks)}"
 
-# text=fetch_youtube_transcript("Gfr50f6ZBvo")
-# print(split_text(text,chunk_size=1000, chunk_overlap=200))
+
+

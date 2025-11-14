@@ -12,17 +12,15 @@ def retriver_fn(vector_store, query, k=3):
         query (str): The input query string.
         k (int): The number of top similar documents to retrieve.   
         """
+    print(f"================================== Similarity Search in Progress =================================")
+    print(f"Query: '{query}'")
+    print(f"Retrieving top {k} most relevant documents...")
     retriver=vector_store.as_retriever(search_type='similarity', search_kwargs={'k':k})
     # print(retriver)
     # print(f"Retrieving top {k} similar documents for the query: '{query}'")
     # print(f"Vector Store Type: {type(vector_store)}")
-    print(retriver.invoke(query))
+    relevant_docs = retriver.invoke(query)
+    print(f" Retrieved {len(relevant_docs)} relevant documents!")
+    print(f"================================== Documents Retrieved Successfully =================================\n")
     return retriver
-
-# text=fetch_youtube_transcript("Gfr50f6ZBvo")
-# chunks=split_text(text,chunk_size=1000, chunk_overlap=200)
-# # print(f"Number of chunks: {len(chunks)}")
-# vector_store = vector_embeddings(chunks)
-
-# print(retriver_fn(vector_store, "What is deepmind?", k=3)) 
 

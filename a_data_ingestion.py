@@ -8,11 +8,16 @@ def fetch_youtube_transcript(video_id):
         video_id (str): The YouTube video ID.
         """
     try:
+        print(f"================================== Fetching YouTube Transcript =================================")
+        print(f"Video ID: {video_id}")
         you_tube_api=YouTubeTranscriptApi()
         youtube_transcript = you_tube_api.fetch(video_id, languages=['en'])
         # convert to raw data and extract text  
         transcript_data=youtube_transcript.to_raw_data()
         transcript=" ".join(chunk['text'] for chunk in transcript_data)
+        print(f" Transcript fetched successfully!")
+        print(f"Transcript length: {len(transcript)} characters")
+        print(f"================================== Transcript Retrieval Complete =================================\n")
         return transcript                # transcript_data
     
     except TranscriptsDisabled:
@@ -23,6 +28,6 @@ def fetch_youtube_transcript(video_id):
         return "Video is unavailable."
     except Exception as e:
         return f"An error occurred: {str(e)}"
+    
 
-# print(fetch_youtube_transcript("LPZh9BOjkQs"))
-# print(fetch_youtube_transcript("Gfr50f6ZBvo"))
+
